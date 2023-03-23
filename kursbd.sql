@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 17 2023 г., 06:52
+-- Время создания: Мар 23 2023 г., 05:59
 -- Версия сервера: 10.4.24-MariaDB
 -- Версия PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `kursbd`
 --
+CREATE DATABASE IF NOT EXISTS `kursbd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `kursbd`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `baggage`
 --
 
+DROP TABLE IF EXISTS `baggage`;
 CREATE TABLE `baggage` (
   `ID_baggage` int(11) NOT NULL,
   `Baggage_data` text NOT NULL
@@ -38,6 +41,7 @@ CREATE TABLE `baggage` (
 -- Структура таблицы `brigades`
 --
 
+DROP TABLE IF EXISTS `brigades`;
 CREATE TABLE `brigades` (
   `ID_brigade` int(11) NOT NULL,
   `Brigade_type` int(11) NOT NULL
@@ -49,6 +53,7 @@ CREATE TABLE `brigades` (
 -- Структура таблицы `divisions`
 --
 
+DROP TABLE IF EXISTS `divisions`;
 CREATE TABLE `divisions` (
   `ID_division` int(11) NOT NULL,
   `Division_name` varchar(50) NOT NULL
@@ -60,6 +65,7 @@ CREATE TABLE `divisions` (
 -- Структура таблицы `flights`
 --
 
+DROP TABLE IF EXISTS `flights`;
 CREATE TABLE `flights` (
   `ID_flight` int(11) NOT NULL,
   `ID_plane` int(11) NOT NULL,
@@ -88,6 +94,7 @@ CREATE TABLE `flights` (
 -- Структура таблицы `foreign_passports`
 --
 
+DROP TABLE IF EXISTS `foreign_passports`;
 CREATE TABLE `foreign_passports` (
   `ID_foreign_passport` int(11) NOT NULL,
   `Foreign_passport_data` int(11) NOT NULL
@@ -99,6 +106,7 @@ CREATE TABLE `foreign_passports` (
 -- Структура таблицы `passengers`
 --
 
+DROP TABLE IF EXISTS `passengers`;
 CREATE TABLE `passengers` (
   `ID_passenger` int(11) NOT NULL,
   `Passenger_is_ticket` tinyint(1) NOT NULL,
@@ -123,6 +131,7 @@ CREATE TABLE `passengers` (
 -- Структура таблицы `passports`
 --
 
+DROP TABLE IF EXISTS `passports`;
 CREATE TABLE `passports` (
   `ID_passport` int(11) NOT NULL,
   `Passport_data` text NOT NULL
@@ -134,6 +143,7 @@ CREATE TABLE `passports` (
 -- Структура таблицы `planes`
 --
 
+DROP TABLE IF EXISTS `planes`;
 CREATE TABLE `planes` (
   `ID_plane` int(11) NOT NULL,
   `Plane_type` int(11) NOT NULL,
@@ -148,6 +158,7 @@ CREATE TABLE `planes` (
 -- Структура таблицы `routes`
 --
 
+DROP TABLE IF EXISTS `routes`;
 CREATE TABLE `routes` (
   `ID_route` int(11) NOT NULL,
   `Route_name` varchar(50) NOT NULL,
@@ -163,6 +174,7 @@ CREATE TABLE `routes` (
 -- Структура таблицы `ticket`
 --
 
+DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `ID_ticket` int(11) NOT NULL,
   `Ticket_is_preorder` tinyint(1) NOT NULL,
@@ -180,6 +192,7 @@ CREATE TABLE `ticket` (
 -- Структура таблицы `workers`
 --
 
+DROP TABLE IF EXISTS `workers`;
 CREATE TABLE `workers` (
   `ID_worker` int(11) NOT NULL,
   `worker_name` varchar(50) NOT NULL,
